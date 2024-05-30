@@ -11,9 +11,10 @@ func InitRoutes() *gin.Engine {
 	router := gin.New()
 	api := router.Group("/api")
 	{
-		lists := api.Group("/hello")
+		lists := api.Group("/")
 		{
 			lists.GET("/", services.HelloWorld)
+			lists.GET("/goroutine-chenal-test", services.ChenalTest)
 			// lists.GET("/:id")
 			// lists.PUT("/:id")
 			// lists.DELETE("/:id")
